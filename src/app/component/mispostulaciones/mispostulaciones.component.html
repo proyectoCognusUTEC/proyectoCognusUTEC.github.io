@@ -1,0 +1,50 @@
+<div class="container p-3">
+    <div class="card responsive-x1" style="opacity: 0.85;">
+        <div class="card-header">
+            <h2 class="text-dark">Mis postulaciones</h2>
+        </div>
+        <div class="card-body">
+            <div class="row pt-3">
+                <div class="col-9">
+                    <!-- <a href="/guardiasabm" class="btn btn-primary"> Nueva Guardia</a> -->
+                    <a class="btn btn-success" href="/component/guardiasdisponibles">
+                        Postularse <i class="bi bi-journal-medical"></i>
+                    </a>
+                </div>
+                <div class="col-3">
+                    <form>
+                        <div class="form-group float-right">
+                            <input class="form-control ml-2" type="text" placeholder="Buscar" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="table-responsive-xl w-100">
+                    <table class="table table-bordered table-light">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Fecha Inicio</th>
+                                <th scope="col">Fecha final</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let guardia of guardias">
+                                <td>{{guardia.id}}</td>
+                                <td>{{guardia.descripcion}}</td>
+                                <td>{{guardia.fechainicio | date:'dd/MM/yyyy - HH:mm'}}</td>
+                                <td>{{guardia.fechafin | date:'dd/MM/yyyy - HH:mm'}}</td>
+                                <td>{{guardia.GuardiaMedicoPostulacion.estado}}</td>
+                                <td><button class="btn btn-danger" (click)="cancelarPostulacion(guardia.id)" *ngIf="guardia.GuardiaMedicoPostulacion.estado==='PENDIENTE'"><i class="bi bi-x-circle"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

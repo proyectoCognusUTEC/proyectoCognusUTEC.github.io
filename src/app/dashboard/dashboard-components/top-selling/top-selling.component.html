@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-body">
+        <!-- title -->
+        <div class="d-md-flex align-items-center">
+            <div>
+                <h4 class="card-title">Top Medicos por hora</h4>
+                <h5 class="card-subtitle">Medicos con mayor cantidad de horas completadas</h5>
+            </div>
+            <div class="ml-auto">
+                <div class="dl">
+                    <select class="custom-select" (change)="test($event.target.value)">
+                        <option value="SEMANA">ESTA SEMANA</option>
+                        <option value="MES">ESTE MES</option>
+                        <option value="TOTAL" selected>TOTAL</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- title -->
+    </div>
+    <div class="table-responsive">
+        <table class="table v-middle">
+            <thead>
+                <tr class="bg-light">
+                    <th class="border-top-0">Nombre</th>
+                    <th class="border-top-0">Apellido</th>
+                    <th class="border-top-0">Email</th>
+                    <th class="border-top-0">Horas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let med of medicos'>
+                    <td>
+                        <a> {{med.nombre}}</a>
+                    </td>
+                    <td>
+                        <a> {{med.apellido}}</a>
+                    </td>
+                    <td>
+                        <a> {{med.email}}</a>
+                    </td>
+                    <td>{{med.total}}</td>
+                </tr>              
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800');
+
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+@import '../node_modules/flatpickr/dist/flatpickr.min.css';
+
+input.form-control.asd {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+#pad{
+    margin: 0;
+    padding: 0;
+}
+
+td{
+    vertical-align:middle
+}
