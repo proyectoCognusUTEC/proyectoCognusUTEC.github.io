@@ -79581,356 +79581,6 @@ var ServiceWorkerModule = /*@__PURE__*/function () {
 
 /***/ }),
 
-/***/ 76013:
-/*!************************************************************************************!*\
-  !*** ./node_modules/@auth0/angular-jwt/__ivy_ngcc__/fesm2015/auth0-angular-jwt.js ***!
-  \************************************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "JWT_OPTIONS": function() { return /* binding */ JWT_OPTIONS; },
-/* harmony export */   "JwtHelperService": function() { return /* binding */ JwtHelperService; },
-/* harmony export */   "JwtInterceptor": function() { return /* binding */ JwtInterceptor; },
-/* harmony export */   "JwtModule": function() { return /* binding */ JwtModule; }
-/* harmony export */ });
-/* harmony import */ var C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/defineProperty */ 5587);
-/* harmony import */ var C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/classCallCheck */ 31112);
-/* harmony import */ var C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/createClass */ 41998);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 35366);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ 61116);
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ 73982);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 83163);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 42693);
-
-
-
-
-
-
-
-
-
-var JWT_OPTIONS = new _angular_core__WEBPACK_IMPORTED_MODULE_3__.InjectionToken('JWT_OPTIONS');
-
-var JwtHelperService = /*@__PURE__*/function () {
-  var JwtHelperService = /*#__PURE__*/function () {
-    function JwtHelperService() {
-      var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-
-      (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__.default)(this, JwtHelperService);
-
-      this.tokenGetter = config && config.tokenGetter || function () {};
-    }
-
-    (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__.default)(JwtHelperService, [{
-      key: "urlBase64Decode",
-      value: function urlBase64Decode(str) {
-        var output = str.replace(/-/g, "+").replace(/_/g, "/");
-
-        switch (output.length % 4) {
-          case 0:
-            {
-              break;
-            }
-
-          case 2:
-            {
-              output += "==";
-              break;
-            }
-
-          case 3:
-            {
-              output += "=";
-              break;
-            }
-
-          default:
-            {
-              throw new Error("Illegal base64url string!");
-            }
-        }
-
-        return this.b64DecodeUnicode(output);
-      } // credits for decoder goes to https://github.com/atk
-
-    }, {
-      key: "b64decode",
-      value: function b64decode(str) {
-        var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-        var output = "";
-        str = String(str).replace(/=+$/, "");
-
-        if (str.length % 4 === 1) {
-          throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
-        }
-
-        for ( // initialize result and counters
-        var bc = 0, bs, buffer, idx = 0; buffer = str.charAt(idx++); // character found in table? initialize bit storage and add its ascii value;
-        ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer, // and if not first of each 4 characters,
-        // convert the first 8 bits to one ascii character
-        bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0) {
-          // try to find character in table (0-63, not found => -1)
-          buffer = chars.indexOf(buffer);
-        }
-
-        return output;
-      }
-    }, {
-      key: "b64DecodeUnicode",
-      value: function b64DecodeUnicode(str) {
-        return decodeURIComponent(Array.prototype.map.call(this.b64decode(str), function (c) {
-          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        }).join(""));
-      }
-    }, {
-      key: "decodeToken",
-      value: function decodeToken() {
-        var token = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.tokenGetter();
-
-        if (!token || token === "") {
-          return null;
-        }
-
-        var parts = token.split(".");
-
-        if (parts.length !== 3) {
-          throw new Error("The inspected token doesn't appear to be a JWT. Check to make sure it has three parts and see https://jwt.io for more.");
-        }
-
-        var decoded = this.urlBase64Decode(parts[1]);
-
-        if (!decoded) {
-          throw new Error("Cannot decode the token.");
-        }
-
-        return JSON.parse(decoded);
-      }
-    }, {
-      key: "getTokenExpirationDate",
-      value: function getTokenExpirationDate() {
-        var token = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.tokenGetter();
-        var decoded;
-        decoded = this.decodeToken(token);
-
-        if (!decoded || !decoded.hasOwnProperty("exp")) {
-          return null;
-        }
-
-        var date = new Date(0);
-        date.setUTCSeconds(decoded.exp);
-        return date;
-      }
-    }, {
-      key: "isTokenExpired",
-      value: function isTokenExpired() {
-        var token = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.tokenGetter();
-        var offsetSeconds = arguments.length > 1 ? arguments[1] : undefined;
-
-        if (!token || token === "") {
-          return true;
-        }
-
-        var date = this.getTokenExpirationDate(token);
-        offsetSeconds = offsetSeconds || 0;
-
-        if (date === null) {
-          return false;
-        }
-
-        return !(date.valueOf() > new Date().valueOf() + offsetSeconds * 1000);
-      }
-    }, {
-      key: "getAuthScheme",
-      value: function getAuthScheme(authScheme, request) {
-        if (typeof authScheme === "function") {
-          return authScheme(request);
-        }
-
-        return authScheme;
-      }
-    }]);
-
-    return JwtHelperService;
-  }();
-
-  JwtHelperService.ɵfac = function JwtHelperService_Factory(t) {
-    return new (t || JwtHelperService)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](JWT_OPTIONS));
-  };
-
-  JwtHelperService.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
-    token: JwtHelperService,
-    factory: JwtHelperService.ɵfac
-  });
-  return JwtHelperService;
-}();
-
-var JwtInterceptor = /*@__PURE__*/function () {
-  var JwtInterceptor = /*#__PURE__*/function () {
-    function JwtInterceptor(config, jwtHelper, document) {
-      (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__.default)(this, JwtInterceptor);
-
-      this.jwtHelper = jwtHelper;
-      this.document = document;
-      this.standardPorts = ["80", "443"];
-      this.tokenGetter = config.tokenGetter;
-      this.headerName = config.headerName || "Authorization";
-      this.authScheme = config.authScheme || config.authScheme === "" ? config.authScheme : "Bearer ";
-      this.allowedDomains = config.allowedDomains || [];
-      this.disallowedRoutes = config.disallowedRoutes || [];
-      this.throwNoTokenError = config.throwNoTokenError || false;
-      this.skipWhenExpired = config.skipWhenExpired;
-    }
-
-    (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__.default)(JwtInterceptor, [{
-      key: "isAllowedDomain",
-      value: function isAllowedDomain(request) {
-        var requestUrl = new URL(request.url, this.document.location.origin); // If the host equals the current window origin,
-        // the domain is allowed by default
-
-        if (requestUrl.host === this.document.location.host) {
-          return true;
-        } // If not the current domain, check the allowed list
-
-
-        var hostName = "".concat(requestUrl.hostname).concat(requestUrl.port && !this.standardPorts.includes(requestUrl.port) ? ":" + requestUrl.port : "");
-        return this.allowedDomains.findIndex(function (domain) {
-          return typeof domain === "string" ? domain === hostName : domain instanceof RegExp ? domain.test(hostName) : false;
-        }) > -1;
-      }
-    }, {
-      key: "isDisallowedRoute",
-      value: function isDisallowedRoute(request) {
-        var _this = this;
-
-        var requestedUrl = new URL(request.url, this.document.location.origin);
-        return this.disallowedRoutes.findIndex(function (route) {
-          if (typeof route === "string") {
-            var parsedRoute = new URL(route, _this.document.location.origin);
-            return parsedRoute.hostname === requestedUrl.hostname && parsedRoute.pathname === requestedUrl.pathname;
-          }
-
-          if (route instanceof RegExp) {
-            return route.test(request.url);
-          }
-
-          return false;
-        }) > -1;
-      }
-    }, {
-      key: "handleInterception",
-      value: function handleInterception(token, request, next) {
-        var authScheme = this.jwtHelper.getAuthScheme(this.authScheme, request);
-        var tokenIsExpired = false;
-
-        if (!token && this.throwNoTokenError) {
-          throw new Error("Could not get token from tokenGetter function.");
-        }
-
-        if (this.skipWhenExpired) {
-          tokenIsExpired = token ? this.jwtHelper.isTokenExpired(token) : true;
-        }
-
-        if (token && tokenIsExpired && this.skipWhenExpired) {
-          request = request.clone();
-        } else if (token) {
-          request = request.clone({
-            setHeaders: (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__.default)({}, this.headerName, "".concat(authScheme).concat(token))
-          });
-        }
-
-        return next.handle(request);
-      }
-    }, {
-      key: "intercept",
-      value: function intercept(request, next) {
-        var _this2 = this;
-
-        if (!this.isAllowedDomain(request) || this.isDisallowedRoute(request)) {
-          return next.handle(request);
-        }
-
-        var token = this.tokenGetter(request);
-
-        if (token instanceof Promise) {
-          return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.from)(token).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.mergeMap)(function (asyncToken) {
-            return _this2.handleInterception(asyncToken, request, next);
-          }));
-        } else {
-          return this.handleInterception(token, request, next);
-        }
-      }
-    }]);
-
-    return JwtInterceptor;
-  }();
-
-  JwtInterceptor.ɵfac = function JwtInterceptor_Factory(t) {
-    return new (t || JwtInterceptor)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](JWT_OPTIONS), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](JwtHelperService), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](_angular_common__WEBPACK_IMPORTED_MODULE_6__.DOCUMENT));
-  };
-
-  JwtInterceptor.ɵprov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjectable"]({
-    token: JwtInterceptor,
-    factory: JwtInterceptor.ɵfac
-  });
-  return JwtInterceptor;
-}();
-
-var JwtModule = /*@__PURE__*/function () {
-  var JwtModule = /*#__PURE__*/function () {
-    function JwtModule(parentModule) {
-      (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__.default)(this, JwtModule);
-
-      if (parentModule) {
-        throw new Error("JwtModule is already loaded. It should only be imported in your application's main module.");
-      }
-    }
-
-    (0,C_Users_admin_Documents_GitHub_proyectoCognusUTEC_github_io_node_modules_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__.default)(JwtModule, null, [{
-      key: "forRoot",
-      value: function forRoot(options) {
-        return {
-          ngModule: JwtModule,
-          providers: [{
-            provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HTTP_INTERCEPTORS,
-            useClass: JwtInterceptor,
-            multi: true
-          }, options.jwtOptionsProvider || {
-            provide: JWT_OPTIONS,
-            useValue: options.config
-          }, JwtHelperService]
-        };
-      }
-    }]);
-
-    return JwtModule;
-  }();
-
-  JwtModule.ɵfac = function JwtModule_Factory(t) {
-    return new (t || JwtModule)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵinject"](JwtModule, 12));
-  };
-
-  JwtModule.ɵmod = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({
-    type: JwtModule
-  });
-  JwtModule.ɵinj = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({});
-  return JwtModule;
-}();
-/*
- * Public API Surface of angular-jwt
- */
-
-/**
- * Generated bundle index. Do not edit.
- */
-
-
- //# sourceMappingURL=auth0-angular-jwt.js.map
-
-/***/ }),
-
 /***/ 10135:
 /*!***************************************************************************************!*\
   !*** ./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js ***!
@@ -104094,11 +103744,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AuthInterceptorService": function() { return /* binding */ AuthInterceptorService; },
 /* harmony export */   "authInterceptorProviders": function() { return /* binding */ authInterceptorProviders; }
 /* harmony export */ });
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 42693);
-/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @auth0/angular-jwt */ 76013);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 35366);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 42693);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 35366);
 /* harmony import */ var _services_token_storage_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/token-storage.service */ 38760);
-
 
 
 
@@ -104110,23 +103758,24 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
     AuthInterceptorService.prototype.intercept = function (req, next) {
         var authReq = req;
         var token = this.token.getToken();
-        if (token != null) {
-            var helper = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_1__.JwtHelperService();
-            if (helper.isTokenExpired(token)) {
-                this.token.deleteToken();
-            }
-            authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com/" + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
-            alert("ESTA ES LA URL: " + authReq.url);
-        }
+        authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com/" + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
+        /*if (token != null) {
+          const helper = new JwtHelperService();
+          if(helper.isTokenExpired(token)){
+            this.token.deleteToken();
+          }
+          authReq = req.clone({ url: `https://stark-coast-62405.herokuapp.com/${req.url}`,headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
+          console.log()
+        }*/
         return next.handle(authReq);
     };
-    AuthInterceptorService.ɵfac = function AuthInterceptorService_Factory(t) { return new (t || AuthInterceptorService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_0__.TokenStorageService)); };
-    AuthInterceptorService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: AuthInterceptorService, factory: AuthInterceptorService.ɵfac });
+    AuthInterceptorService.ɵfac = function AuthInterceptorService_Factory(t) { return new (t || AuthInterceptorService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_0__.TokenStorageService)); };
+    AuthInterceptorService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: AuthInterceptorService, factory: AuthInterceptorService.ɵfac });
     return AuthInterceptorService;
 }());
 
 var authInterceptorProviders = [
-    { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
 ];
 
 
