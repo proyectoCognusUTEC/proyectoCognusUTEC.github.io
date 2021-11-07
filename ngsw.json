@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1636248918402,
+  "timestamp": 1636250070731,
   "index": "https://proyectocognusutec.github.io/index.html",
   "assetGroups": [
     {
@@ -719,7 +719,7 @@
     "https://proyectocognusutec.github.io/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "https://proyectocognusutec.github.io/index.html": "09e7641fd3107d93775b870f3ee0093ef7c535f7",
     "https://proyectocognusutec.github.io/main.dfe8b0a95e2479e9ef6e.js": "771b02384778bec03a774a456b2225f60641d397",
-    "https://proyectocognusutec.github.io/manifest.webmanifest": "97ca1bcaefdc91ced6792f36b09c8c2e7f6eb37f",
+    "https://proyectocognusutec.github.io/manifest.webmanifest": "e86b653b512b9fc260ef0bebf1ccc873fae40330",
     "https://proyectocognusutec.github.io/materialdesignicons-webfont.5cbc1ce0f8ee2c20e27b.woff2": "9be0766a4b2a580e1d27bf275a4526655400d9ca",
     "https://proyectocognusutec.github.io/materialdesignicons-webfont.601a98440c7cee9a24c0.svg": "0dc12f9688788ae534110828f823a8fcf6664d6c",
     "https://proyectocognusutec.github.io/materialdesignicons-webfont.da5fb9dba31bb391d27e.woff": "7ce7769db5658e58a27975d828134571052a7cf8",
