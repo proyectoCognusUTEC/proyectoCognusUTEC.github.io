@@ -103758,7 +103758,7 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
     AuthInterceptorService.prototype.intercept = function (req, next) {
         var authReq = req;
         var token = this.token.getToken();
-        authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com/" + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
+        authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com/" + req.url });
         /*if (token != null) {
           const helper = new JwtHelperService();
           if(helper.isTokenExpired(token)){
@@ -103767,6 +103767,7 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
           authReq = req.clone({ url: `https://stark-coast-62405.herokuapp.com/${req.url}`,headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
           console.log()
         }*/
+        console.log("LA RUTA ES: ", authReq.url);
         return next.handle(authReq);
     };
     AuthInterceptorService.ɵfac = function AuthInterceptorService_Factory(t) { return new (t || AuthInterceptorService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_0__.TokenStorageService)); };
