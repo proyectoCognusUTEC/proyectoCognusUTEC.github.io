@@ -30422,6 +30422,7 @@ var PerfilMedicoComponent = /** @class */ /*@__PURE__*/ (function () {
         this.medicoService = medicoService;
         this.router = router;
         this.url = src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.BACKEND_URL;
+        console.log("LA RUTA AL BACK ES: ", this.url);
         this.route.queryParams.subscribe(function (params) {
             //console.log('El medico es: ' + params.id );
             var id = params.id;

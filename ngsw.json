@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1636313963477,
+  "timestamp": 1636314475390,
   "index": "https://proyectocognusutec.github.io/index.html",
   "assetGroups": [
     {
@@ -382,7 +382,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://proyectocognusutec.github.io/29.js": "96e55aa3a42f31632809d59b67cebe51260ae886",
+    "https://proyectocognusutec.github.io/29.js": "f75ce1d9e655985bcb2aef8b0d60c30c214d0fe5",
     "https://proyectocognusutec.github.io/600.js": "a6a67aaf9874f1e7b9e9190e8ccf10e488de4046",
     "https://proyectocognusutec.github.io/assets/icons/icon-128x128.png": "572da338418a094cbcbe8000509fdd2ee38a33cc",
     "https://proyectocognusutec.github.io/assets/icons/icon-144x144.png": "baf82d2e862d2bd1c0019cf768249dd937ee2166",
