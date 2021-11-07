@@ -103758,7 +103758,7 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
     AuthInterceptorService.prototype.intercept = function (req, next) {
         var authReq = req;
         var token = this.token.getToken();
-        authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com" + req.url });
+        authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com" + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
         /*if (token != null) {
           const helper = new JwtHelperService();
           if(helper.isTokenExpired(token)){
