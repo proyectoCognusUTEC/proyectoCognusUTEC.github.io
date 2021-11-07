@@ -104115,7 +104115,8 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
             if (helper.isTokenExpired(token)) {
                 this.token.deleteToken();
             }
-            authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token), url: "https://stark-coast-62405.herokuapp.com/" + req.url });
+            authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com/" + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
+            alert("ESTA ES LA URL: " + authReq.url);
         }
         return next.handle(authReq);
     };
