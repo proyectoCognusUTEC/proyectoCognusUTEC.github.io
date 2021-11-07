@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1636262240157,
+  "timestamp": 1636313963477,
   "index": "https://proyectocognusutec.github.io/index.html",
   "assetGroups": [
     {
@@ -382,8 +382,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://proyectocognusutec.github.io/29.js": "11b7b0fc337e85595bbb63dcd4aa886a082350b8",
-    "https://proyectocognusutec.github.io/600.js": "939326e79ff86589bb2af3ac4af2ae127326bfd5",
+    "https://proyectocognusutec.github.io/29.js": "96e55aa3a42f31632809d59b67cebe51260ae886",
+    "https://proyectocognusutec.github.io/600.js": "a6a67aaf9874f1e7b9e9190e8ccf10e488de4046",
     "https://proyectocognusutec.github.io/assets/icons/icon-128x128.png": "572da338418a094cbcbe8000509fdd2ee38a33cc",
     "https://proyectocognusutec.github.io/assets/icons/icon-144x144.png": "baf82d2e862d2bd1c0019cf768249dd937ee2166",
     "https://proyectocognusutec.github.io/assets/icons/icon-152x152.png": "138ac6e638e48959ffbcd5b737b6c08c44ab8073",
@@ -718,7 +718,7 @@
     "https://proyectocognusutec.github.io/fa-solid-900.woff2": "fe366898f9b2cc0e43366289503d5a718f0fd06f",
     "https://proyectocognusutec.github.io/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "https://proyectocognusutec.github.io/index.html": "08d0276a234570585d27d16004ce14deb7b37e19",
-    "https://proyectocognusutec.github.io/main.js": "855c3fc1804fa361593ac34abdd61f233478289c",
+    "https://proyectocognusutec.github.io/main.js": "880debceeadf5e6d7ce6d696264f0b243927aa0d",
     "https://proyectocognusutec.github.io/manifest.webmanifest": "e86b653b512b9fc260ef0bebf1ccc873fae40330",
     "https://proyectocognusutec.github.io/materialdesignicons-webfont.svg": "0dc12f9688788ae534110828f823a8fcf6664d6c",
     "https://proyectocognusutec.github.io/materialdesignicons-webfont.ttf": "15342d738bd398009374c0d78e35ca69b6eda96f",

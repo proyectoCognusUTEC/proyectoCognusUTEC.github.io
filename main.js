@@ -103744,9 +103744,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AuthInterceptorService": function() { return /* binding */ AuthInterceptorService; },
 /* harmony export */   "authInterceptorProviders": function() { return /* binding */ authInterceptorProviders; }
 /* harmony export */ });
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ 42693);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ 35366);
-/* harmony import */ var _services_token_storage_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/token-storage.service */ 38760);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ 42693);
+/* harmony import */ var src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/environments/environment.prod */ 81267);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 35366);
+/* harmony import */ var _services_token_storage_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/token-storage.service */ 38760);
+
 
 
 
@@ -103758,7 +103760,7 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
     AuthInterceptorService.prototype.intercept = function (req, next) {
         var authReq = req;
         var token = this.token.getToken();
-        authReq = req.clone({ url: "https://stark-coast-62405.herokuapp.com" + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
+        authReq = req.clone({ url: "" + src_environments_environment_prod__WEBPACK_IMPORTED_MODULE_0__.environment.BACKEND_URL + req.url, headers: req.headers.set(TOKEN_HEADER_KEY, 'bearer ' + token) });
         /*if (token != null) {
           const helper = new JwtHelperService();
           if(helper.isTokenExpired(token)){
@@ -103768,13 +103770,13 @@ var AuthInterceptorService = /** @class */ /*@__PURE__*/ (function () {
         }*/
         return next.handle(authReq);
     };
-    AuthInterceptorService.ɵfac = function AuthInterceptorService_Factory(t) { return new (t || AuthInterceptorService)(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_0__.TokenStorageService)); };
-    AuthInterceptorService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjectable"]({ token: AuthInterceptorService, factory: AuthInterceptorService.ɵfac });
+    AuthInterceptorService.ɵfac = function AuthInterceptorService_Factory(t) { return new (t || AuthInterceptorService)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinject"](_services_token_storage_service__WEBPACK_IMPORTED_MODULE_1__.TokenStorageService)); };
+    AuthInterceptorService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjectable"]({ token: AuthInterceptorService, factory: AuthInterceptorService.ɵfac });
     return AuthInterceptorService;
 }());
 
 var authInterceptorProviders = [
-    { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__.HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
+    { provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__.HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }
 ];
 
 
@@ -104744,6 +104746,25 @@ var SidebarComponent = /** @class */ /*@__PURE__*/ (function () {
 
 /***/ }),
 
+/***/ 81267:
+/*!**********************************************!*\
+  !*** ./src/environments/environment.prod.ts ***!
+  \**********************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "environment": function() { return /* binding */ environment; }
+/* harmony export */ });
+var environment = {
+    BACKEND_URL: "https://stark-coast-62405.herokuapp.com",
+    production: true
+};
+
+
+/***/ }),
+
 /***/ 529:
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -104756,6 +104777,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "environment": function() { return /* binding */ environment; }
 /* harmony export */ });
 var environment = {
+    BACKEND_URL: "https://stark-coast-62405.herokuapp.com",
     production: true
 };
 
