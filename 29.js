@@ -26310,7 +26310,7 @@ var EspecialidadMedicoComponent = /** @class */ /*@__PURE__*/ (function () {
         var _this = this;
         console.log('el id del medico es: ' + this.medicoId);
         this.especialidadService.getEspecialidades().subscribe(function (data) {
-            _this.especialidades = data.data;
+            _this.especialidades = data;
         });
     };
     EspecialidadMedicoComponent.prototype.onSubmit = function () {
@@ -28525,7 +28525,6 @@ var MedicoComponent = /** @class */ /*@__PURE__*/ (function () {
         this.tipo = this.tokenStorage.getRoleName();
         this.getMedicos();
     };
-    // tslint:disable:typedef
     MedicoComponent.prototype.refresh = function () {
         this.getMedicos();
     };
