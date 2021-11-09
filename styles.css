@@ -15831,7 +15831,8 @@ Topbar Responsive
 Main sidebar
 ******************/
 .left-sidebar {
-  position: absolute;
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
   width: 250px;
   height: 100%;
   top: 0px;
