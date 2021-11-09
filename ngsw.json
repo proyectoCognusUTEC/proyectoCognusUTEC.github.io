@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1636483014516,
+  "timestamp": 1636483235491,
   "index": "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/index.html",
   "assetGroups": [
     {
@@ -383,8 +383,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/29.js": "dd93c54c13090feb9c32610b200af509ff78b4f6",
-    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/600.js": "a6a67aaf9874f1e7b9e9190e8ccf10e488de4046",
+    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/29.js": "1f819bccec8dbfb11e61a81d775c3dc3cd8dd408",
+    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/600.js": "37643452b056dff246f69a1a0125a7b6883acc8b",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/assets/icons/icon-128x128.png": "572da338418a094cbcbe8000509fdd2ee38a33cc",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/assets/icons/icon-144x144.png": "baf82d2e862d2bd1c0019cf768249dd937ee2166",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/assets/icons/icon-152x152.png": "138ac6e638e48959ffbcd5b737b6c08c44ab8073",
@@ -720,15 +720,15 @@
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/fa-solid-900.woff2": "fe366898f9b2cc0e43366289503d5a718f0fd06f",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/index.html": "fe8c173b1721626a256fcc3d9c01279e147366a0",
-    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/main.js": "59af687c23bfdb70c2a038f9f6b4e0e59c98949f",
+    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/main.js": "3ad4a9524c75f7b16eeae555171607130e6e7bf4",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/manifest.webmanifest": "e86b653b512b9fc260ef0bebf1ccc873fae40330",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/materialdesignicons-webfont.svg": "0dc12f9688788ae534110828f823a8fcf6664d6c",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/materialdesignicons-webfont.ttf": "15342d738bd398009374c0d78e35ca69b6eda96f",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/materialdesignicons-webfont.woff": "7ce7769db5658e58a27975d828134571052a7cf8",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/materialdesignicons-webfont.woff2": "9be0766a4b2a580e1d27bf275a4526655400d9ca",
-    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/polyfills-es5.js": "151ac9a97709b185c92b3d86126b776873119099",
-    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/polyfills.js": "794e8d84b1d2a3e17993e3b13450b6d6caab1037",
-    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/runtime.js": "c5a3bbae6c97d7ea64cd264570481a8fc2686047",
+    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/polyfills-es5.js": "a3a6d0fa074dd68e53c3300a8fe9347304620120",
+    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/polyfills.js": "14f3088ac0fb2a6b604db16f27c6b6fb1f2f26f5",
+    "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/runtime.js": "08ff194572753bb926ba54a1fc45a9d6eceb0802",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/scripts.js": "8abab5431a06c25541d4c0e5b43ea5341a9f8727",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/styles.css": "4164b17a3b353723df968f3cc74eb6af1e308042",
     "https://github.com/proyectoCognusUTEC/proyectoCognusUTEC.github.io/themify.svg": "106a9ed6d6b0936376b5723611a602a2e3da66c6",
