@@ -104744,7 +104744,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "environment": function() { return /* binding */ environment; }
 /* harmony export */ });
 var environment = {
-    BACKEND_URL: "http://localhost:5000",
+    BACKEND_URL: "https://stark-coast-62405.herokuapp.com",
     production: true
 };
 
@@ -104763,7 +104763,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "environment": function() { return /* binding */ environment; }
 /* harmony export */ });
 var environment = {
-    BACKEND_URL: "http://localhost:5000",
+    BACKEND_URL: "https://stark-coast-62405.herokuapp.com",
     production: true
 };
 
