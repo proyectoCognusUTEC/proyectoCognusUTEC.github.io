@@ -1,4 +1,4 @@
-(self["webpackChunkguardianfront"] = self["webpackChunkguardianfront"] || []).push([[600],{
+(self["webpackChunkxtreme_admin_angular_lite"] = self["webpackChunkxtreme_admin_angular_lite"] || []).push([[600],{
 
 /***/ 72075:
 /*!*********************************************!*\
