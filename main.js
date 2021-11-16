@@ -104535,7 +104535,7 @@ var Approutes = [
         path: '',
         component: _layouts_full_full_component__WEBPACK_IMPORTED_MODULE_0__.FullComponent,
         children: [
-            { path: '', redirectTo: 'component/carousel', pathMatch: 'full' },
+            { path: '', redirectTo: 'component/card', pathMatch: 'full' },
             {
                 path: 'dashboard',
                 loadChildren: function () { return __webpack_require__.e(/*! import() */ 600).then(__webpack_require__.bind(__webpack_require__, /*! ./dashboard/dashboard.module */ 7600)).then(function (m) { return m.DashboardModule; }); }
