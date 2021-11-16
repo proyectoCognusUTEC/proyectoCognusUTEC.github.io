@@ -20204,6 +20204,13 @@ input.form-control.asd {
 td {
   vertical-align: middle;
 }
+.text-blue {
+  color: #2962ff;
+}
+img {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
 @font-face {
   font-family: "bootstrap-icons";
   src: url('bootstrap-icons.woff2?856008caa5eb66df68595e734e59580d') format("woff2"),
